@@ -35,6 +35,14 @@
                 <form action="{{ route('admin.projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+                <div>
+                    <label for="type_id" class="form-label">Project Type:</label>
+                    <select name="type_id" id="type_id">
+                            @foreach($types_db as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            @endforeach
+                    </select>
+                </div>
                 @if($project->image != null)
                 <div>
                     <img src="{{ asset('storage/'.$project->image)}}">

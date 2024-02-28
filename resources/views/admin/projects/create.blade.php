@@ -34,6 +34,14 @@
                 @endif
                 <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <div>
+                        <label for="type_id" class="form-label">Project Type:</label>
+                        <select name="type_id" id="type_id">
+                                @foreach($types_db as $type)
+                                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                                @endforeach
+                        </select>
+                    </div>
                     <div class="form-group mb-3">
                         <label for="image">Project Image:</label>
                         <input type="file" name="image" id="image" class="form-control" accept="image/*">

@@ -28,6 +28,11 @@
                     <img src="{{ asset('storage/'.$project->image)}}">
                 </div>
                 @endif
+                @if($project->type_id != null)
+                <div>
+                    Type Id: {{$project->type_id}}
+                </div>
+                @endif
                 <div>
                     Project Id: {{$project->id}}
                 </div>
@@ -39,6 +44,9 @@
                 </div>
                 <div>
                     Project Stack: {{$project->stack}}
+                </div>
+                <div>
+                    Project Type: {{$project->type_id}}
                 </div>
             </div>
         </div>

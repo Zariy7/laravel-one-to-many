@@ -9,6 +9,7 @@
                       <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Type Id</th>
                         <th scope="col">Description</th>
                         <th scope="col">Stack</th>
                         <th scope="col">Functions</th>
@@ -19,6 +20,7 @@
                         <tr>
                             <th scope="row">{{$project->id}}</th>
                             <td>{{$project->slug}}</td>
+                            <td>{{$project->type_id}}</td>
                             <td>{{$project->desc}}</td>
                             <td>{{ ucwords(implode(', ', explode('/', $project->stack)))}}.</td>
                             <td>
